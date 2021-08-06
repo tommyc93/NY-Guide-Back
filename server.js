@@ -37,7 +37,7 @@ app.use(cors())
 
 //Route to Heroku
 app.get('/', (req, res) => {
-    res.redirect('/recipes')
+    res.send('Hello World')
 
 
 //================Listener================//
