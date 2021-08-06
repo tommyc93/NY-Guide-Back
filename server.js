@@ -14,6 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 //================Middleware================//
 
 app.use(express.json())
+
 app.use(
     session({
         secret: process.env.SECRET,
