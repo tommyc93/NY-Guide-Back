@@ -12,7 +12,6 @@ const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 
 //================Middleware================//
-
 app.use(express.json())
 
 app.use(
@@ -35,6 +34,10 @@ mongoose.connect(MONGODB_URI,
 })
 
 app.use(cors())
+
+//================Controllers================//
+const nyguideController = require('./controllers/main.js')
+app.use('/nyguide', nyguideController)
 
 //Route to Heroku
 app.get('/', (req, res) => {
