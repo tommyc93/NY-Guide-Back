@@ -44,9 +44,9 @@ const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
 
 //Route to Heroku
-// app.get('/', (req, res) => {
-//     res.send('Hello World')
-// })
+app.get('/', (req, res) => {
+    res.redirect('/nyguide')
+})
 
 //================Listener================//
 app.listen(PORT, () => {
