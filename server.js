@@ -38,10 +38,14 @@ app.use(cors())
 //================Controllers================//
 const nyguideController = require('./controllers/main.js')
 app.use('/nyguide', nyguideController)
+const userController = require('./controllers/users.js')
+app.use('/users', userController)
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
 
 //Route to Heroku
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.redirect('/nyguide')
 })
 
 //================Listener================//

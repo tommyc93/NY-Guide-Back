@@ -13,15 +13,15 @@ sessions.post('/', (req, res) => {
     User.findOne({username: req.body.username}, (error, foundUser) => {
         if(error){
             console.log(error)
-            res.send('The db had a bug, one moment.')
+            console.log('The db had a bug, one moment.')
         } else if(!foundUser) {
-            res.send('<a href="/">Sorry, no user found. </a>')
+            console.log('Sorry, no user found')
         } else {
             if(bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser
-                res.redirect('/')
+                res.json(foundUser)
             } else {
-                res.send('<a href="/">Password does not match</a>')
+                console.log('Password does not match.')
             }
         }
     })
