@@ -6,10 +6,10 @@ const guideSchema = new mongoose.Schema({
     title: String,
     category: String,
     location: String,
-    images: [String],
+    image: [String],
     description: String,
     price: String,
-    rating: Number,
+    rating: String,
     comments: [String],
     likes: Number,
     author: String
