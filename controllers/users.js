@@ -13,9 +13,9 @@ users.post('/', (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
     User.create(req.body, (error, createdUser) => {
         console.log('User is created: ', createdUser)
-        res.redirect('/')
+        res.json(createdUser)
     })
 })
 
 //================Export================//
-module.exports = user
+module.exports = users
