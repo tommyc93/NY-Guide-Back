@@ -10,8 +10,8 @@ const guideSchema = new mongoose.Schema({
     description: String,
     price: String,
     rating: String,
-    comments: [String],
-    likes: Number,
+    comments: [{username: String, comment: String}],
+    likes: {type: Number, default: 0},
     author: String
 })
 
