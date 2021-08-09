@@ -2,10 +2,7 @@
 const bcrypt = require('bcrypt')
 const express = require('express')
 const sessions = express.Router()
-const cors = require('cors')
 const User = require('../models/users.js')
-
-app.use(cors())
 
 //================Routes================//
 sessions.get('/new', (req, res) => {

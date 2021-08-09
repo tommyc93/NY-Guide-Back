@@ -1,10 +1,7 @@
 //================Depenedencies================//
 const express = require('express')
 const router = express.Router()
-const cors = require('cors')
 const Guide = require('../models/nyguide.js')
-
-app.use(cors())
 
 //================Routes================//
 //*****Index*****//
