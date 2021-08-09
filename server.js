@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 
 //================Middleware================//
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 
 app.use(
     session({
