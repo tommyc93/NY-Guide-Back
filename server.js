@@ -13,6 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 
 //================Middleware================//
 app.use(express.json())
+app.use(cors())
 
 app.use(
     session({
@@ -32,8 +33,6 @@ mongoose.connect(MONGODB_URI,
     () => {
         console.log("The connection with mongod is established")
 })
-
-app.use(cors())
 
 //================Controllers================//
 const nyguideController = require('./controllers/main.js')
