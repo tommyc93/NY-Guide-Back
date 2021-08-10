@@ -11,9 +11,16 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 
+const corsOptions = {
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+}
+
 //================Middleware================//
+app.use(cors(corsOptions))
 app.use(express.json())
-app.use(cors())
 
 app.use(
     session({
