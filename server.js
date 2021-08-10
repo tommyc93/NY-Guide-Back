@@ -11,8 +11,13 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 
+const corsOptions = {
+    origin: "http://ny-guide-front-end-rina-tommy.herokuapp.com/",
+    optionsSuccessStatus: 200
+}
+
 //================Middleware================//
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 
 app.use(
