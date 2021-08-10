@@ -12,8 +12,10 @@ const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI
 
 const corsOptions = {
-    origin: "https://ny-guide-front-end-rina-tommy.herokuapp.com/",
-    optionsSuccessStatus: 200
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
 }
 
 //================Middleware================//
