@@ -17,5 +17,22 @@ users.post('/', (req, res) => {
     })
 })
 
+users.put('/login', (req, res) => {
+  console.log(req.body);
+  User.findOne({username: req.body.username}, (err, foundUser) => {
+    if(err) {
+      res.json('Oops, there was an error. Please try again')
+    } else {
+      if(!foundUser){
+        res.json('Username and password do not match. Please try again.')
+      } else if(bcrypt.compareSync(req.body.password, foundUser.password)) {
+        res.json({username: foundUser.username})
+      } else {
+        res.json('Username and password do not match. Please try again.')
+      }
+    }
+  })
+});
+
 //================Export================//
 module.exports = users
