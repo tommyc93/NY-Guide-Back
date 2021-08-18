@@ -1,48 +1,67 @@
-# NY-Guide-Back
-Back End
+# [NY Guide](http://ny-guide-front-end-rina-tommy.herokuapp.com/)
 
-Question:
-1) What went well for your group?
-We were able to do just about all of our stretch goals.  We were also able to communicate and support each other throughout the project.
+## Authors
+- Tommy Chung |[LinkedIn](https://www.linkedin.com/in/tommy-chung93)|  |[GitHub](https://github.com/tommyc93)|
+- Rina Joy Abu |[LinkedIn](https://www.linkedin.com/in/rinajoyabu/)| |[GitHub](https://github.com/rinajabu)|
 
-2) What was your groups biggest struggle?
-Our biggest struggles were trying to finish our stretch goals.  The login and filtering functionality took 2 days.
+### Approach
+#### Picking a Project Idea
+We discussed a few different ideas ranging from travel guide for places to ratings blog and thought a travel guide would give us a wide range of opportunities to add a lot of functionality.
 
-3) What was the most useful tool that your group relied on the most?
-The most useful tool we relied on were our cohorts, TA's and instructors.  Everyone was helpful and patient throughout.
+#### Splitting the work
+We were able to decide how we would delegate the tasks for our projects.  I would work on the backend and work on components for the front end.  Rina would work on the front end.  After that we would peer program together on parts we may need assistance on.  We cloned our repos and created separate branches for both us to work on independently so we wouldn't have merge conflicts with one another.
 
-4) What was the most surprising aspect of working in a group/a thing (or things) you didn’t anticipate?
-The most surprising aspect was how much I enjoyed working with another.  The thing I didn't enjoy was the pushing and pulling, because I missed just working on my own for instantaneous changes.
+#### Data Structure
+- Created the backend and frontend in a separate repos.
+- Created the backend using jsx, cors, express, and Javascript.
+- Created the frontend using React.
+- Linked the backend with MongoDB Atlas.
 
-//Technologies
-Mongoose
-Express
-react
-Node
-bootstrap
-Skeleteon
-axios
-models
-components
+## User Stories
+#### Core
+- User should be able to add recommendations
+- Edit recommendations
+- Delete recommendations
+- Filter through the guide
+- Adding likes and comments to recommendations
+- User should be able to sign-up and login
 
+#### Stretch
+- Create a sticky nav-bar
+- Image Carousel for input tabs
+- Filtering option
+- Adding comments
+- Adding Likes
+- Using bootstrap
+- Make ratings into stars
+- Add sign-up/sign-in
+- Add modals
 
-//Everything Else
-Day 1
+## Technologies/Languages Used
+#### MERN Stack
+- MongoDB
+- Express
+- React
+- Node.js
+- Bootstrap
+- Skeleton
 
-I learned that if you update your schema on the backend, you have to remember to push up to heroku if you're referencing your api with the heroku link.  Finished the back end and added create, edit, and delete functionality on the front end.
+#### Project Management, hosting, and deployed
+- GitHub
+- Heroku
+- Trello/Agile board
+- MongoDB Atlas
 
-Day 2
+#### Unsolved Problems
+- Was not able to do lifting states.
 
-Starting to work on the sign up and login aspect of the project.  Had to change the backend logic to compensate for jsx, remove all console.log alerts.
+#### Solved Problems
+- Was able to get filter functionality working
+- Was able to create star ratings by just using && conditionals to the value, and inputting the hexcode into it.
+- Was able to use Modal's fairly easily by just wrapping things in the jsx with Modal HTML tags.  We just had to install a Modal package 'react-responsive-modal'.
+- Solved the issue with event.preventDefault() staying on the page and not resetting by throwing everything into modals and adding the close modal functionality into the form.
 
-Day 3
-
-Added modals to our project.  Noticed how or handles using the put/post routes were not working without the event.preventDefault().  To make it cleaner we put it in a modal and added the closemodal() to close the modal application to get around the preventDefault making it stay.  Also add the event.currentTarget.reset() to reset the data preset that was leftover from the create form.  Was able to make the edit modal differentiate between each dataset by making the hook/state === the param of the map._id.  That way it will only choose the matching id component of the data when editing.
-
-Day 4
-
-Tried testing out carousel images.  Wanted to make it so the user can add multiple images to an object.  Was able to make that work by adding new image hooks to differentiate between each image and create corresponding image input links.  Hid it with a dropdown tag called "Add more images".  Could not finish to make this work.  Started to make the filter function.  Kept on saying react doesn't recognize filter as a function.
-
-Day 5
-
-Created the filter function, so the user can filter the dataset by category (All, outdoor, food, museum, night-life, sight-seeing).  Was finally able to make it work by using my entire dataset.filter and then specified it by category equalled to the filtered state.  Afterwards I mapped through my entire showpage dataset.  At the end at iterated a && conditional where if a user chooses the option 'All', it would show the entire dataset.
+#### Reflection Section
+- If we update the schema on the backend and it's connected to heroku/atlas, we would need to push our changes to heroku.
+- Couldn't use our submit forms without event.preventDefault().
+- Finally figured out how to make filtering work by mapping our dataset and throwing everything we wrote into it.
